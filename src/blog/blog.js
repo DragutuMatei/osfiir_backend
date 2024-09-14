@@ -1,4 +1,4 @@
-import { db, storage } from "../config_fire";
+import { db, storage } from "../../config_fire";
 import {
   addDoc,
   collection,
@@ -50,7 +50,10 @@ const addBlogPost = async (req, res) => {
     console.log(req.files);
     data["galerie"] = [];
     for (let i = 0; i < req.files["galerie[]"].length; i++) {
-      const storageRef = ref(storage, `/blog/${req.files["galerie[]"][i].name}`);
+      const storageRef = ref(
+        storage,
+        `/blog/${req.files["galerie[]"][i].name}`
+      );
 
       await uploadBytes(storageRef, req.files["galerie[]"][i].data);
 

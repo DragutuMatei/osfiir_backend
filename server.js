@@ -1,6 +1,6 @@
 import express, { json } from "express";
 import fileUpload from "express-fileupload";
-import { addBlogPost, getBlogPosts, getBlogPostById } from "./blog/blog";
+import { addBlogPost, getBlogPosts, getBlogPostById } from "./src/blog/blog";
 const app = express();
 
 app.use(fileUpload());
