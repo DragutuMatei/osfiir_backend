@@ -7,6 +7,7 @@ app.use(fileUpload());
 app.use(json());
 
 app.use(function (req, res, next) {
+  // res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   res.setHeader("Access-Control-Allow-Origin", "https://osfiir-v2.netlify.app");
   res.setHeader(
     "Access-Control-Allow-Methods",
@@ -22,7 +23,7 @@ app.use(function (req, res, next) {
 });
 
 app.post("/", (req, res) => {
-  res.status(200).json({ mes: "ce cauti aici?" });
+  res.status(200).json({mes:"ce cauti aici?"})
 });
 app.post("/addBlogPost", addBlogPost);
 app.get("/getBlogPosts", getBlogPosts);
