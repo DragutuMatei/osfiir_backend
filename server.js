@@ -1,6 +1,8 @@
 import express, { json } from "express";
 import fileUpload from "express-fileupload";
 import { addBlogPost, getBlogPosts, getBlogPostById } from "./src/blog/blog";
+import { getBobociByCNP } from "./src/cazari/cazari";
+
 const app = express();
 
 app.use(fileUpload());
@@ -8,7 +10,7 @@ app.use(json());
 
 app.use(function (req, res, next) {
   // res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.setHeader("Access-Control-Allow-Origin", "https://osfiir-v2.netlify.app");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
@@ -28,6 +30,8 @@ app.post("/", (req, res) => {
 app.post("/addBlogPost", addBlogPost);
 app.get("/getBlogPosts", getBlogPosts);
 app.get("/getBlogPostById/:id", getBlogPostById);
+
+app.get('getBobociByCNP/:cnp', getBobociByCNP)
 
 const PORT = process.env.PORT || 3001;
 
