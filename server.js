@@ -25,13 +25,13 @@ app.use(function (req, res, next) {
 });
 
 app.post("/", (req, res) => {
-  res.status(200).json({mes:"ce cauti aici?"})
+  res.status(200).json({ mes: "ce cauti aici?" });
 });
 app.post("/addBlogPost", addBlogPost);
 app.get("/getBlogPosts", getBlogPosts);
 app.get("/getBlogPostById/:id", getBlogPostById);
 
-app.get('getBobociByCNP/:cnp', getBobociByCNP)
+app.get("/getBobociByCNP/:cnp", getBobociByCNP);
 
 const PORT = process.env.PORT || 3001;
 
