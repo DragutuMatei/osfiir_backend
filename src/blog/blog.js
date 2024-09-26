@@ -79,6 +79,7 @@ const getBlogPosts = async (req, res) => {
     blog_posts.forEach((doc) => {
       data.push({ uid: doc.id, ...doc.data() });
     });
+    console.log(data);
     res.status(200).json({ ok: true, data });
   } catch (error) {
     res.status(500).json({ ok: false, error });
