@@ -13,7 +13,7 @@ app.use(function (req, res, next) {
   // res.setHeader("Access-Control-Allow-Origin", "https://osfiir.ro");
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://osfiir-v2.netlify.app/"
+    "https://osfiir-v2.netlify.app"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
