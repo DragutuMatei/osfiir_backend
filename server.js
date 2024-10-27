@@ -1,6 +1,12 @@
 import express, { json } from "express";
 import fileUpload from "express-fileupload";
-import { addBlogPost, getBlogPosts, getBlogPostById } from "./src/blog/blog";
+import {
+  getBlogPosts,
+  getById,
+  getAnunturi,
+  addPost,
+  deleteById,
+} from "./src/blog/blog";
 import { getBobociByCNP } from "./src/cazari/cazari";
 
 const app = express();
@@ -23,6 +29,7 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Headers",
     "X-Requested-With,content-type"
   );
+
   res.setHeader("Access-Control-Allow-Credentials", true);
 
   next();
@@ -31,9 +38,11 @@ app.use(function (req, res, next) {
 app.post("/", (req, res) => {
   res.status(200).json({ mes: "ce cauti aici?" });
 });
-app.post("/addBlogPost", addBlogPost);
-app.get("/getBlogPosts", getBlogPosts);
-app.get("/getBlogPostById/:id", getBlogPostById);
+app.post("/addPost", addPost);
+app.get("/getBlogPosts/:cat", getBlogPosts);
+app.get("/getAnunturi/:cat", getAnunturi);
+app.get("/getById/:id", getById);
+app.post("/deleteById", deleteById);
 
 app.get("/getBobociByCNP/:cnp", getBobociByCNP);
 
