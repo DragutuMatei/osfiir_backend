@@ -17,10 +17,7 @@ app.use(json());
 app.use(function (req, res, next) {
   // res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   // res.setHeader("Access-Control-Allow-Origin", "https://osfiir.ro");
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://osfiir-v2.netlify.app"
-  );
+  res.setHeader("Access-Control-Allow-Origin", "https://osfiir-v2.netlify.app");
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
@@ -45,6 +42,11 @@ app.get("/getById/:id", getById);
 app.post("/deleteById", deleteById);
 
 app.get("/getBobociByCNP/:cnp", getBobociByCNP);
+
+app.post("/levelup/level15", (req, res) => {
+  const data = req.body;
+  res.status(200).json({ data, type: typeof data });
+});
 
 const PORT = process.env.PORT || 3001;
 
