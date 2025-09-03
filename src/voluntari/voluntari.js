@@ -7,6 +7,7 @@ import {
   equalTo,
 } from "firebase/database";
 import { database } from "../../config_fire";
+import { limitToFirst } from "firebase/database"; 
 
 const getVoluntariByMatricol = async (req, res) => {
   let nrMatricol = req.params.nr_matricol;
@@ -17,7 +18,8 @@ const getVoluntariByMatricol = async (req, res) => {
     const q = query(
       voluntariRef,
       orderByChild("nr_matricol"),
-      equalTo(nrMatricol)
+      equalTo(nrMatricol),
+      limitToFirst(1)
     );
     const snapshot = await get(q);
     if (snapshot.exists()) {
