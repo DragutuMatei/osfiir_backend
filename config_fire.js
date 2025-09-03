@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
-import {database} from "firebase/database";
+import {getDatabase} from "firebase/database";
 
 const firebaseConfig = {
   apiKey: process.env.apiKey,
