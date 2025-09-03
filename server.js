@@ -8,6 +8,7 @@ import {
   deleteById,
 } from "./src/blog/blog";
 import { getBobociByCNP } from "./src/cazari/cazari";
+import { getVoluntariByMatricol } from "./src/voluntari/voluntari";
 
 const app = express();
 
@@ -42,7 +43,7 @@ app.get("/getById/:id", getById);
 app.post("/deleteById", deleteById);
 
 app.get("/getBobociByCNP/:cnp", getBobociByCNP);
-
+app.get("/voluntari/:nr_matricol", getVoluntariByMatricol);
 
 const PORT = process.env.PORT || 3001;
 
