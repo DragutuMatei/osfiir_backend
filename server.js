@@ -17,8 +17,8 @@ app.use(json());
 
 app.use(function (req, res, next) {
   // res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-  // res.setHeader("Access-Control-Allow-Origin", "https://osfiir.ro");
-  res.setHeader("Access-Control-Allow-Origin", "https://osfiir-v2.netlify.app");
+  res.setHeader("Access-Control-Allow-Origin", "https://osfiir.ro");
+  // res.setHeader("Access-Control-Allow-Origin", "https://osfiir-v2.netlify.app");
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
