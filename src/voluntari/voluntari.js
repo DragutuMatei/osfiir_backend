@@ -10,8 +10,8 @@ import { database } from "../../config_fire";
 
 const getVoluntariByMatricol = async (req, res) => {
   let nrMatricol = req.params.nr_matricol;
-    nrMatricol = nrMatricol.replace("-", "/");
-    
+    nrMatricol = nrMatricol.replaceAll("-", "/");
+
   try {
     const voluntariRef = ref(database, "voluntari");
     const q = query(
